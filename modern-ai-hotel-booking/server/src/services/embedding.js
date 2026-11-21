@@ -5,7 +5,7 @@ let openai = null;
 function getOpenAIClient() {
   if (!process.env.OPENAI_API_KEY) {
     throw new Error(
-      "OPENAI_API_KEY chưa được cấu hình. Chức năng AI hiện chưa khả dụng."
+      "OPENAI_API_KEY chưa được cấu hình."
     );
   }
 
