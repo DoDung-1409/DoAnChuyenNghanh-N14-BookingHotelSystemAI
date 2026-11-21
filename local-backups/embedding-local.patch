@@ -1,0 +1,15 @@
+diff --git a/modern-ai-hotel-booking/server/src/services/embedding.js b/modern-ai-hotel-booking/server/src/services/embedding.js
+index b676e83..8c8a168 100644
+--- a/modern-ai-hotel-booking/server/src/services/embedding.js
++++ b/modern-ai-hotel-booking/server/src/services/embedding.js
+@@ -1,7 +1,9 @@
+ ﻿import "dotenv/config";
+ import OpenAI from "openai";
+ 
+-export const openai = new OpenAI(); // reads OPENAI_API_KEY
++export const openai = new OpenAI({
++  apiKey: process.env.OPENAI_API_KEY || "unused-key-for-local-development",
++}); // reads OPENAI_API_KEY
+ 
+ export async function embed(text) {
+   const res = await openai.embeddings.create({
